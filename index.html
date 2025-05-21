@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Matemática</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo_escola.png" alt="Logo da Escola" id="school-logo">
+
+        <h1>Desafio de Matemática!</h1>
+
+        <div id="welcome-area">
+            <p>Preparado(a) para o desafio?</p>
+            <label for="player-name">Seu nome:</label>
+            <input type="text" id="player-name" placeholder="Digite seu nome aqui">
+            <button id="start-game-button">Escalar</button>
+
+            <div class="teams-display">
+                <div class="team-list">
+                    <h3>Seleção 1</h3>
+                    <ul id="team1-players">
+                        </ul>
+                </div>
+                <div class="team-list">
+                    <h3>Seleção 2</h3>
+                    <ul id="team2-players">
+                        </ul>
+                </div>
+            </div>
+            <div id="team-scaled-message" class="hidden">
+                <h2>🎉 O time está escalado para o jogo! 🎉</h2>
+            </div>
+        </div>
+
+        <div id="game-area" class="hidden">
+            <div id="timer-display">Tempo: <span id="countdown">30</span>s</div>
+            <p id="question"></p>
+            <input type="number" id="answer-input" placeholder="Sua resposta">
+            <button id="submit-button">Responder</button>
+        </div>
+
+        <div class="scores hidden">
+            <p>Jogadores no Time: <span id="players-in-team">0</span></p>
+        </div>
+    </div>
+
+    <div id="feedback-overlay" class="hidden">
+        <h2 id="overlay-message"></h2>
+        <p id="overlay-details"></p>
+        <button id="next-player-button">Próximo Desafiante</button>
+    </div>
+
+    <div id="physical-challenge" class="hidden">
+        <h2>DESAFIO FÍSICO!</h2>
+        <p id="challenge-text"></p>
+        <button id="challenge-done-button">Desafio Concluído!</button>
+    </div>
+
+    <footer id="main-footer">
+        Desenvolvido por Magdiel Franco, Professor de Educação Física
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

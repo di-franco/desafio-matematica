@@ -1,0 +1,292 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    background-color: #f0f2f5;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    padding-bottom: 60px; /* Adiciona padding na parte inferior para o rodapé fixo */
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do body */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    /* Remover flex-grow, flex-shrink, flex-basis e margins auto aqui */
+}
+
+/* Estilo para a logo da escola */
+#school-logo {
+    max-width: 130px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Área de Boas-Vindas */
+#welcome-area p, #welcome-area label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#player-name {
+    padding: 10px 15px;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+    max-width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para as Seleções */
+.teams-display {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.team-list {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.team-list h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.team-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height: 50px;
+}
+
+.team-list li {
+    background-color: #e9ecef;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: #333;
+    text-align: left;
+}
+
+/* Mensagem de time escalado */
+#team-scaled-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Área do Jogo */
+#game-area {
+    margin-top: 20px;
+}
+
+#timer-display {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#question {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+#answer-input {
+    padding: 10px 15px;
+    font-size: 1.3em;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+    max-width: 200px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Botões específicos */
+button#start-game-button {
+    background-color: #007bff;
+}
+
+button#start-game-button:hover {
+    background-color: #0056b3;
+}
+
+button#next-player-button {
+    background-color: #6c757d;
+}
+button#next-player-button:hover {
+    background-color: #5a6268;
+}
+
+button#challenge-done-button {
+    background-color: #ffc107;
+    color: #333;
+}
+
+button#challenge-done-button:hover {
+    background-color: #e0a800;
+}
+
+/* Área de Feedback (Overlay de Tela Cheia) */
+#feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    transition: background-color 0.5s ease;
+    z-index: 1000;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#overlay-message {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#overlay-details {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Cores do feedback */
+body.correct-answer {
+    background-color: #4CAF50;
+}
+
+body.wrong-answer, body.time-up {
+    background-color: #dc3545;
+}
+
+/* Cor para o estado de "time escalado" */
+body.team-scaled {
+    background-color: #007bff;
+}
+
+/* Área de Desafio Físico */
+#physical-challenge {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    background-color: #007bff;
+    z-index: 1001;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#physical-challenge h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+}
+
+#physical-challenge p {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Placar de Jogadores */
+.scores {
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: #666;
+    font-weight: bold;
+}
+
+/* ESTILOS PARA O RODAPÉ */
+#main-footer {
+    position: fixed; /* Fixa o rodapé na viewport */
+    bottom: 0;       /* Alinha na parte inferior */
+    left: 0;         /* Alinha à esquerda */
+    width: 100%;     /* Ocupa 100% da largura */
+    padding: 10px 0; /* Padding vertical */
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    background-color: #e9ecef;
+    border-top: 1px solid #ddd;
+    z-index: 999; /* Um z-index alto, mas menor que os overlays */
+    box-sizing: border-box;
+}
+
+/* Ajustes para o rodapé em telas de feedback/time escalado */
+body.correct-answer #main-footer,
+body.wrong-answer #main-footer,
+body.time-up #main-footer,
+body.team-scaled #main-footer {
+    color: white;
+    background-color: transparent; /* Permite que a cor de fundo do body apareça */
+    border-top: none;
+}
+
+/* CLASSE HIDDEN APLICADA COM !IMPORTANT */
+.hidden {
+    display: none !important;
+}
