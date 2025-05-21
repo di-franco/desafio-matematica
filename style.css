@@ -17,44 +17,44 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 35px 45px;
+    padding: 40px 50px; /* Aumenta um pouco o padding para dar mais "respiro" */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 90%;
-    max-width: 650px;
+    max-width: 700px; /* Um pouco mais largo em telas grandes */
     position: relative;
     z-index: 1;
 }
 
 #school-logo {
-    max-width: 140px;
+    max-width: 150px; /* Logo um pouco maior */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Mais espaço abaixo da logo */
 }
 
 h1 {
     color: #2c3e50;
-    margin-bottom: 25px;
-    font-size: 2.5em; /* Ajuste para telas maiores */
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
+    font-size: 2.8em; /* Fonte do título principal maior */
     font-weight: 700;
-    line-height: 1.2; /* Garante que o texto não fique muito apertado */
+    line-height: 1.2;
 }
 
 #welcome-area p, #welcome-area label {
-    font-size: 1.1em;
-    margin-bottom: 12px;
+    font-size: 1.2em; /* Fontes de texto padrão um pouco maiores */
+    margin-bottom: 15px;
     color: #555;
 }
 
 #player-name {
-    padding: 12px 18px;
-    font-size: 1.05em;
+    padding: 14px 20px; /* Mais padding para campos de input */
+    font-size: 1.1em; /* Fonte maior no input */
     border: 1px solid #cdd4da;
     border-radius: 8px;
-    width: calc(100% - 36px);
-    max-width: 280px;
-    margin-bottom: 25px;
+    width: calc(100% - 40px); /* Ajuste para o padding */
+    max-width: 300px; /* Aumenta um pouco o campo de nome */
+    margin-bottom: 30px;
     text-align: center;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -67,19 +67,19 @@ h1 {
 
 .teams-display {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+    flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 35px;
+    margin-top: 40px; /* Mais espaço acima */
     border-top: 1px solid #e0e0e0;
-    padding-top: 25px;
+    padding-top: 30px; /* Mais espaço abaixo da borda */
 }
 
 .team-list {
     flex: 1;
-    min-width: 200px;
-    margin: 10px;
+    min-width: 220px; /* Aumenta o tamanho mínimo para cada coluna */
+    margin: 12px; /* Aumenta o margin para mais espaçamento */
     background-color: #f9fbfd;
-    padding: 20px;
+    padding: 25px; /* Mais padding */
     border-radius: 10px;
     border: 1px solid #e9edf1;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -88,8 +88,8 @@ h1 {
 .team-list h3 {
     color: #007bff;
     margin-top: 0;
-    margin-bottom: 18px;
-    font-size: 1.3em; /* Ajuste */
+    margin-bottom: 20px;
+    font-size: 1.4em; /* Título das seleções maior */
     font-weight: 600;
 }
 
@@ -97,15 +97,15 @@ h1 {
     list-style: none;
     padding: 0;
     margin: 0;
-    min-height: 60px;
+    min-height: 70px; /* Mais altura para a lista */
 }
 
 .team-list li {
     background-color: #f0f4f7;
-    padding: 10px 15px;
-    margin-bottom: 8px;
+    padding: 12px 18px; /* Mais padding para os itens da lista */
+    margin-bottom: 10px;
     border-radius: 6px;
-    font-size: 0.9em; /* Ajuste */
+    font-size: 0.95em; /* Fonte dos jogadores maior */
     color: #444;
     text-align: left;
     box-shadow: 0 1px 3px rgba(0,0,0,0.03);
@@ -115,9 +115,9 @@ h1 {
 }
 
 #team-scaled-message {
-    margin-top: 30px;
+    margin-top: 35px;
     color: #28a745;
-    font-size: 1.4em; /* Ajuste para destaque */
+    font-size: 1.5em; /* Mensagem de time escalado maior */
     font-weight: bold;
     animation: fadeIn 1s ease-out;
 }
@@ -127,32 +127,32 @@ h1 {
 }
 
 #game-area {
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
 #timer-display {
-    font-size: 1.8em; /* Ajuste */
+    font-size: 2em; /* Fonte do timer maior */
     font-weight: bold;
     color: #007bff;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 #question {
-    font-size: 1.6em; /* Ajuste */
+    font-size: 1.8em; /* Fonte da pergunta maior */
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-weight: 500;
-    line-height: 1.3; /* Garante que o texto não fique muito apertado */
+    line-height: 1.3;
 }
 
 #answer-input {
-    padding: 12px 18px;
-    font-size: 1.2em;
+    padding: 14px 20px; /* Mais padding para input de resposta */
+    font-size: 1.3em; /* Fonte maior no input de resposta */
     border: 1px solid #cdd4da;
     border-radius: 8px;
-    width: calc(100% - 36px);
-    max-width: 220px;
-    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    max-width: 250px; /* Aumenta um pouco */
+    margin-bottom: 25px;
     text-align: center;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -165,13 +165,13 @@ h1 {
 button {
     background-color: #28a745;
     color: white;
-    padding: 12px 28px;
+    padding: 14px 30px; /* Mais padding nos botões */
     border: none;
     border-radius: 6px;
-    font-size: 1.05em;
+    font-size: 1.1em; /* Fonte dos botões maior */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 8px;
+    margin: 10px; /* Mais espaço entre botões */
     font-weight: 600;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
@@ -222,7 +222,7 @@ button#challenge-done-button:hover {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.7em; /* Ajuste */
+    font-size: 1.9em; /* Overlay feedback maior */
     transition: background-color 0.5s ease;
     z-index: 1000;
     text-align: center;
@@ -231,14 +231,14 @@ button#challenge-done-button:hover {
 }
 
 #overlay-message {
-    font-size: 1.8em; /* Ajuste */
-    margin-bottom: 20px;
+    font-size: 2.1em; /* Mensagem principal do overlay maior */
+    margin-bottom: 25px;
     font-weight: bold;
 }
 
 #overlay-details {
-    font-size: 1.1em; /* Ajuste */
-    margin-bottom: 30px;
+    font-size: 1.3em; /* Detalhes do overlay maior */
+    margin-bottom: 35px;
     font-weight: 400;
 }
 
@@ -265,7 +265,7 @@ body.team-scaled {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.7em; /* Ajuste */
+    font-size: 1.9em; /* Desafio físico maior */
     background-color: #007bff;
     z-index: 1001;
     text-align: center;
@@ -274,20 +274,20 @@ body.team-scaled {
 }
 
 #physical-challenge h2 {
-    font-size: 1.8em; /* Ajuste */
+    font-size: 2.1em; /* Título do desafio físico maior */
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 #physical-challenge p {
-    font-size: 1.3em; /* Ajuste */
+    font-size: 1.5em; /* Texto do desafio físico maior */
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .scores {
-    margin-top: 30px;
-    font-size: 1.4em; /* Ajuste */
+    margin-top: 35px;
+    font-size: 1.5em; /* Placar maior */
     color: #666;
     font-weight: bold;
 }
@@ -297,9 +297,9 @@ body.team-scaled {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px 0;
+    padding: 12px 0; /* Padding ajustado */
     text-align: center;
-    font-size: 0.8em; /* Ajuste */
+    font-size: 0.9em; /* Fonte do rodapé maior */
     color: #666;
     background-color: #f0f0f0;
     border-top: 1px solid #e0e0e0;
@@ -319,56 +319,164 @@ body.team-scaled #main-footer {
 /* --- Media Queries for Mobile Screens --- */
 @media (max-width: 768px) { /* Tablets and larger phones */
     body {
-        font-size: 15px; /* Base font-size reduzida para telas médias */
+        font-size: 16px; /* Base font-size padrão para telas médias */
         padding-bottom: 60px; /* Ajuste */
     }
 
     .container {
-        padding: 25px 30px;
+        padding: 30px 35px; /* Reduz o padding do container */
     }
 
     #school-logo {
-        max-width: 110px;
-        margin-bottom: 15px;
-    }
-
-    h1 {
-        font-size: 1.8em; /* Relativo à nova base */
+        max-width: 120px;
         margin-bottom: 20px;
     }
 
+    h1 {
+        font-size: 2.2em; /* Título grande, mas proporcional */
+        margin-bottom: 25px;
+    }
+
     #welcome-area p, #welcome-area label {
-        font-size: 1em; /* Relativo à nova base */
+        font-size: 1.1em;
     }
 
     #player-name {
-        font-size: 0.95em;
-        padding: 10px 15px;
-        max-width: 240px;
+        font-size: 1.05em;
+        padding: 12px 18px;
+        max-width: 260px;
     }
 
     .teams-display {
         flex-direction: column; /* Stacks teams vertically */
         align-items: center;
-        margin-top: 25px;
-        padding-top: 20px;
+        margin-top: 30px;
+        padding-top: 25px;
     }
 
     .team-list {
-        width: 90%;
+        width: 95%; /* Ocupa mais largura em celular */
+        margin: 10px 0; /* Ajusta margem para espaçamento vertical */
+        padding: 20px;
+    }
+    .team-list h3 {
+        font-size: 1.25em;
+        margin-bottom: 15px;
+    }
+    .team-list ul {
+        min-height: 50px;
+    }
+    .team-list li {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        margin-bottom: 8px;
+    }
+
+    #team-scaled-message {
+        font-size: 1.2em;
+        margin-top: 30px;
+    }
+
+    #timer-display {
+        font-size: 1.7em;
+        margin-bottom: 25px;
+    }
+
+    #question {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    #answer-input {
+        font-size: 1.2em;
+        padding: 12px 18px;
+        max-width: 200px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 8px;
+    }
+
+    #feedback-overlay {
+        font-size: 1.6em;
+        padding: 20px;
+    }
+    #overlay-message {
+        font-size: 1.8em;
+    }
+    #overlay-details {
+        font-size: 1.1em;
+    }
+
+    #physical-challenge {
+        font-size: 1.6em;
+        padding: 20px;
+    }
+    #physical-challenge h2 {
+        font-size: 1.8em;
+    }
+    #physical-challenge p {
+        font-size: 1.3em;
+    }
+
+    .scores {
+        font-size: 1.3em;
+        margin-top: 30px;
+    }
+
+    #main-footer {
+        font-size: 0.8em;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 420px) { /* Smallest mobile phones (e.g., iPhone SE, Galaxy S/J antigos) */
+    body {
+        font-size: 15px; /* Base font-size para celulares bem pequenos */
+        padding-bottom: 55px; /* Ajuste final do padding */
+    }
+
+    .container {
+        padding: 25px 25px; /* Reduz mais o padding do container */
+    }
+
+    #school-logo {
+        max-width: 100px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Título principal para tela pequena */
+        margin-bottom: 20px;
+    }
+
+    #welcome-area p, #welcome-area label {
+        font-size: 1em;
+    }
+
+    #player-name {
+        font-size: 0.95em;
+        padding: 10px 15px;
+        max-width: 200px;
+    }
+
+    .team-list {
+        width: 98%; /* Quase largura total */
         margin: 8px 0;
-        padding: 15px;
+        padding: 15px; /* Menos padding */
     }
     .team-list h3 {
         font-size: 1.1em;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
     .team-list ul {
         min-height: 40px;
     }
     .team-list li {
-        font-size: 0.85em; /* Ajuste */
-        padding: 7px 12px;
+        font-size: 0.85em;
+        padding: 8px 12px;
         margin-bottom: 6px;
     }
 
@@ -378,170 +486,63 @@ body.team-scaled #main-footer {
     }
 
     #timer-display {
-        font-size: 1.4em; /* Ajuste */
+        font-size: 1.5em;
         margin-bottom: 20px;
     }
 
     #question {
-        font-size: 1.2em; /* Ajuste */
+        font-size: 1.3em;
         margin-bottom: 25px;
     }
 
     #answer-input {
-        font-size: 1em; /* Ajuste */
+        font-size: 1.1em;
         padding: 10px 15px;
-        max-width: 180px;
+        max-width: 160px;
     }
 
     button {
-        padding: 10px 22px;
-        font-size: 0.95em; /* Ajuste */
+        padding: 10px 20px;
+        font-size: 0.95em;
         margin: 6px;
+    }
+    button#next-player-button, button#challenge-done-button {
+        padding: 9px 18px; /* Botões menores para caber */
     }
 
     #feedback-overlay {
-        font-size: 1.3em; /* Ajuste */
+        font-size: 1.4em;
         padding: 15px;
     }
     #overlay-message {
-        font-size: 1.5em; /* Ajuste */
+        font-size: 1.6em;
     }
     #overlay-details {
-        font-size: 1em; /* Ajuste */
+        font-size: 1em;
     }
 
     #physical-challenge {
-        font-size: 1.3em; /* Ajuste */
+        font-size: 1.4em;
         padding: 15px;
     }
     #physical-challenge h2 {
-        font-size: 1.5em; /* Ajuste */
+        font-size: 1.6em;
     }
     #physical-challenge p {
-        font-size: 1.1em; /* Ajuste */
+        font-size: 1.2em;
     }
 
     .scores {
-        font-size: 1.2em; /* Ajuste */
-        margin-top: 25px;
+        font-size: 1.2em;
+        margin-top: 20px;
     }
 
     #main-footer {
-        font-size: 0.7em; /* Ajuste */
+        font-size: 0.75em;
         padding: 8px 0;
     }
 }
 
-@media (max-width: 420px) { /* Small mobile phones */
-    body {
-        font-size: 14px; /* Base font-size ainda menor para celulares muito pequenos */
-        padding-bottom: 55px; /* Ajuste final do padding */
-    }
-
-    .container {
-        padding: 20px 20px; /* Reduz mais o padding do container */
-    }
-
-    #school-logo {
-        max-width: 90px;
-        margin-bottom: 10px;
-    }
-
-    h1 {
-        font-size: 1.6em; /* FONTES BEM MENORES AQUI */
-        margin-bottom: 15px;
-    }
-
-    #welcome-area p, #welcome-area label {
-        font-size: 0.9em;
-    }
-
-    #player-name {
-        font-size: 0.85em;
-        padding: 8px 12px;
-        max-width: 180px;
-    }
-
-    .team-list {
-        width: 98%; /* Quase largura total */
-        margin: 5px 0;
-        padding: 10px; /* Menos padding */
-    }
-    .team-list h3 {
-        font-size: 1em;
-        margin-bottom: 8px;
-    }
-    .team-list ul {
-        min-height: 30px;
-    }
-    .team-list li {
-        font-size: 0.7em; /* BEM MENOR */
-        padding: 5px 8px;
-        margin-bottom: 3px;
-    }
-
-    #team-scaled-message {
-        font-size: 0.95em;
-        margin-top: 20px;
-    }
-
-    #timer-display {
-        font-size: 1.2em; /* Ajuste */
-        margin-bottom: 15px;
-    }
-
-    #question {
-        font-size: 1.1em; /* Ajuste */
-        margin-bottom: 20px;
-    }
-
-    #answer-input {
-        font-size: 0.9em;
-        padding: 8px 12px;
-        max-width: 140px;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 0.85em;
-        margin: 4px;
-    }
-    button#next-player-button, button#challenge-done-button {
-        padding: 7px 14px; /* Botões menores para caber */
-    }
-
-    #feedback-overlay {
-        font-size: 1.1em;
-        padding: 10px;
-    }
-    #overlay-message {
-        font-size: 1.3em;
-    }
-    #overlay-details {
-        font-size: 0.85em;
-    }
-
-    #physical-challenge {
-        font-size: 1.1em;
-        padding: 10px;
-    }
-    #physical-challenge h2 {
-        font-size: 1.3em;
-    }
-    #physical-challenge p {
-        font-size: 0.9em;
-    }
-
-    .scores {
-        font-size: 1em;
-        margin-top: 15px;
-    }
-
-    #main-footer {
-        font-size: 0.6em; /* Rodapé minúsculo para não atrapalhar */
-        padding: 6px 0;
-    }
-}
 
 /* CLASSE HIDDEN APLICADA COM !IMPORTANT */
 .hidden {
