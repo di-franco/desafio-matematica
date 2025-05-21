@@ -1,157 +1,192 @@
+/* Base Styles for Larger Screens / General Layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
     min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
-    background-color: #f0f2f5;
+    background-color: #eef2f7;
     margin: 0;
     transition: background-color 0.5s ease;
-    overflow-x: hidden; /* Evita rolagem horizontal */
-    padding-bottom: 60px; /* Adiciona padding na parte inferior para o rodapé fixo */
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho total do body */
-    font-size: 16px; /* Base font-size para o body */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    padding-bottom: 70px; /* Espaço para o rodapé fixo */
+    box-sizing: border-box;
+    font-size: 16px; /* Base font-size para o body (será ajustado nas media queries) */
+    color: #333;
 }
 
 .container {
     background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 650px;
     position: relative;
     z-index: 1;
 }
 
-/* Estilo para a logo da escola */
 #school-logo {
-    max-width: 130px;
+    max-width: 140px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color: #333;
+    color: #2c3e50;
     margin-bottom: 25px;
-    font-size: 2.2em; /* Tamanho padrão para telas maiores */
+    font-size: 2.5em; /* Ajuste para telas maiores */
+    font-weight: 700;
+    line-height: 1.2; /* Garante que o texto não fique muito apertado */
 }
 
-/* Área de Boas-Vindas */
 #welcome-area p, #welcome-area label {
-    font-size: 1.1em; /* Levemente menor para adequar */
-    margin-bottom: 10px;
+    font-size: 1.1em;
+    margin-bottom: 12px;
     color: #555;
 }
 
 #player-name {
-    padding: 10px 15px;
-    font-size: 1em; /* Ajuste aqui */
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    width: calc(100% - 30px);
-    max-width: 250px;
-    margin-bottom: 20px;
+    padding: 12px 18px;
+    font-size: 1.05em;
+    border: 1px solid #cdd4da;
+    border-radius: 8px;
+    width: calc(100% - 36px);
+    max-width: 280px;
+    margin-bottom: 25px;
     text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Estilos para as Seleções */
+#player-name:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
 .teams-display {
     display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
     justify-content: space-around;
-    margin-top: 30px;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    margin-top: 35px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 25px;
 }
 
 .team-list {
     flex: 1;
-    margin: 0 10px;
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
+    min-width: 200px;
+    margin: 10px;
+    background-color: #f9fbfd;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e9edf1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .team-list h3 {
     color: #007bff;
     margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 1.2em; /* Ajuste aqui */
+    margin-bottom: 18px;
+    font-size: 1.3em; /* Ajuste */
+    font-weight: 600;
 }
 
 .team-list ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    min-height: 50px;
+    min-height: 60px;
 }
 
 .team-list li {
-    background-color: #e9ecef;
-    padding: 8px 12px;
-    margin-bottom: 5px;
-    border-radius: 4px;
-    font-size: 0.85em; /* Ajuste aqui */
-    color: #333;
+    background-color: #f0f4f7;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    font-size: 0.9em; /* Ajuste */
+    color: #444;
     text-align: left;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.team-list li:last-child {
+    margin-bottom: 0;
 }
 
-/* Mensagem de time escalado */
 #team-scaled-message {
-    margin-top: 20px;
+    margin-top: 30px;
     color: #28a745;
-    font-size: 1.1em; /* Ajuste aqui */
+    font-size: 1.4em; /* Ajuste para destaque */
     font-weight: bold;
+    animation: fadeIn 1s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Área do Jogo */
 #game-area {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 #timer-display {
-    font-size: 1.6em; /* Ajuste aqui */
+    font-size: 1.8em; /* Ajuste */
     font-weight: bold;
     color: #007bff;
-    margin-bottom: 20px;
-}
-
-#question {
-    font-size: 1.4em; /* Ajuste aqui */
-    color: #333;
     margin-bottom: 25px;
 }
 
+#question {
+    font-size: 1.6em; /* Ajuste */
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 500;
+    line-height: 1.3; /* Garante que o texto não fique muito apertado */
+}
+
 #answer-input {
-    padding: 10px 15px;
-    font-size: 1.1em; /* Ajuste aqui */
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    width: calc(100% - 30px);
-    max-width: 200px;
-    margin-bottom: 15px;
+    padding: 12px 18px;
+    font-size: 1.2em;
+    border: 1px solid #cdd4da;
+    border-radius: 8px;
+    width: calc(100% - 36px);
+    max-width: 220px;
+    margin-bottom: 20px;
     text-align: center;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+#answer-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #28a745;
     color: white;
-    padding: 10px 20px; /* Ajuste aqui */
+    padding: 12px 28px;
     border: none;
-    border-radius: 5px;
-    font-size: 1em; /* Ajuste aqui */
+    border-radius: 6px;
+    font-size: 1.05em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 8px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Botões específicos */
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 button#start-game-button {
     background-color: #007bff;
 }
@@ -176,7 +211,6 @@ button#challenge-done-button:hover {
     background-color: #e0a800;
 }
 
-/* Área de Feedback (Overlay de Tela Cheia) */
 #feedback-overlay {
     position: fixed;
     top: 0;
@@ -188,7 +222,7 @@ button#challenge-done-button:hover {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.8em; /* Ajuste aqui */
+    font-size: 1.7em; /* Ajuste */
     transition: background-color 0.5s ease;
     z-index: 1000;
     text-align: center;
@@ -197,30 +231,29 @@ button#challenge-done-button:hover {
 }
 
 #overlay-message {
-    font-size: 1.8em; /* Ajuste aqui */
-    margin-bottom: 15px; /* Ajuste aqui */
+    font-size: 1.8em; /* Ajuste */
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 #overlay-details {
-    font-size: 1.1em; /* Ajuste aqui */
-    margin-bottom: 25px; /* Ajuste aqui */
+    font-size: 1.1em; /* Ajuste */
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
-/* Cores do feedback */
 body.correct-answer {
-    background-color: #4CAF50;
+    background-color: #28a745;
 }
 
 body.wrong-answer, body.time-up {
     background-color: #dc3545;
 }
 
-/* Cor para o estado de "time escalado" */
 body.team-scaled {
     background-color: #007bff;
 }
 
-/* Área de Desafio Físico */
 #physical-challenge {
     position: fixed;
     top: 0;
@@ -232,7 +265,7 @@ body.team-scaled {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.8em; /* Ajuste aqui */
+    font-size: 1.7em; /* Ajuste */
     background-color: #007bff;
     z-index: 1001;
     text-align: center;
@@ -241,216 +274,274 @@ body.team-scaled {
 }
 
 #physical-challenge h2 {
-    font-size: 1.8em; /* Ajuste aqui */
+    font-size: 1.8em; /* Ajuste */
     color: white;
-    margin-bottom: 15px; /* Ajuste aqui */
+    margin-bottom: 20px;
 }
 
 #physical-challenge p {
-    font-size: 1.2em; /* Ajuste aqui */
+    font-size: 1.3em; /* Ajuste */
     color: white;
-    margin-bottom: 25px; /* Ajuste aqui */
+    margin-bottom: 30px;
 }
 
-/* Placar de Jogadores */
 .scores {
-    margin-top: 25px; /* Ajuste aqui */
-    font-size: 1.2em; /* Ajuste aqui */
+    margin-top: 30px;
+    font-size: 1.4em; /* Ajuste */
     color: #666;
     font-weight: bold;
 }
 
-/* ESTILOS PARA O RODAPÉ */
 #main-footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 8px 0; /* Reduz um pouco o padding para ser mais discreto */
+    padding: 10px 0;
     text-align: center;
-    font-size: 0.8em; /* Reduz o tamanho da fonte do rodapé */
-    color: #777;
-    background-color: #e9ecef;
-    border-top: 1px solid #ddd;
+    font-size: 0.8em; /* Ajuste */
+    color: #666;
+    background-color: #f0f0f0;
+    border-top: 1px solid #e0e0e0;
     z-index: 999;
     box-sizing: border-box;
 }
 
-/* Ajustes para o rodapé em telas de feedback/time escalado */
 body.correct-answer #main-footer,
 body.wrong-answer #main-footer,
 body.time-up #main-footer,
 body.team-scaled #main-footer {
-    color: white;
+    color: rgba(255, 255, 255, 0.8);
     background-color: transparent;
     border-top: none;
 }
 
-/* --- Media Queries para Telas Menores (Celulares) --- */
-@media (max-width: 768px) { /* Para telas de até 768px de largura (tablets e celulares) */
+/* --- Media Queries for Mobile Screens --- */
+@media (max-width: 768px) { /* Tablets and larger phones */
+    body {
+        font-size: 15px; /* Base font-size reduzida para telas médias */
+        padding-bottom: 60px; /* Ajuste */
+    }
+
     .container {
-        padding: 20px 25px; /* Reduz o padding do container em telas menores */
+        padding: 25px 30px;
+    }
+
+    #school-logo {
+        max-width: 110px;
+        margin-bottom: 15px;
     }
 
     h1 {
-        font-size: 1.8em; /* Diminui o título principal */
+        font-size: 1.8em; /* Relativo à nova base */
+        margin-bottom: 20px;
     }
 
     #welcome-area p, #welcome-area label {
-        font-size: 1em;
+        font-size: 1em; /* Relativo à nova base */
     }
 
     #player-name {
-        font-size: 0.9em;
-        padding: 8px 12px;
+        font-size: 0.95em;
+        padding: 10px 15px;
+        max-width: 240px;
     }
 
+    .teams-display {
+        flex-direction: column; /* Stacks teams vertically */
+        align-items: center;
+        margin-top: 25px;
+        padding-top: 20px;
+    }
+
+    .team-list {
+        width: 90%;
+        margin: 8px 0;
+        padding: 15px;
+    }
     .team-list h3 {
         font-size: 1.1em;
+        margin-bottom: 12px;
     }
-
+    .team-list ul {
+        min-height: 40px;
+    }
     .team-list li {
-        font-size: 0.8em;
-        padding: 6px 10px;
+        font-size: 0.85em; /* Ajuste */
+        padding: 7px 12px;
+        margin-bottom: 6px;
     }
 
     #team-scaled-message {
-        font-size: 1em;
+        font-size: 1.1em;
+        margin-top: 25px;
     }
 
     #timer-display {
-        font-size: 1.4em;
+        font-size: 1.4em; /* Ajuste */
+        margin-bottom: 20px;
     }
 
     #question {
-        font-size: 1.2em;
+        font-size: 1.2em; /* Ajuste */
+        margin-bottom: 25px;
     }
 
     #answer-input {
-        font-size: 1em;
-        padding: 8px 12px;
+        font-size: 1em; /* Ajuste */
+        padding: 10px 15px;
+        max-width: 180px;
     }
 
     button {
-        padding: 8px 15px;
-        font-size: 0.9em;
+        padding: 10px 22px;
+        font-size: 0.95em; /* Ajuste */
+        margin: 6px;
     }
 
     #feedback-overlay {
-        font-size: 1.5em; /* Diminui o texto do overlay */
+        font-size: 1.3em; /* Ajuste */
         padding: 15px;
     }
-
     #overlay-message {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Ajuste */
     }
-
     #overlay-details {
-        font-size: 1em;
+        font-size: 1em; /* Ajuste */
     }
 
     #physical-challenge {
-        font-size: 1.5em; /* Diminui o texto do desafio físico */
+        font-size: 1.3em; /* Ajuste */
         padding: 15px;
     }
-
     #physical-challenge h2 {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Ajuste */
     }
-
     #physical-challenge p {
-        font-size: 1.1em;
+        font-size: 1.1em; /* Ajuste */
     }
 
     .scores {
-        font-size: 1.1em;
+        font-size: 1.2em; /* Ajuste */
+        margin-top: 25px;
     }
 
     #main-footer {
-        font-size: 0.7em; /* Rodapé ainda menor em telas muito pequenas */
+        font-size: 0.7em; /* Ajuste */
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 420px) { /* Small mobile phones */
+    body {
+        font-size: 14px; /* Base font-size ainda menor para celulares muito pequenos */
+        padding-bottom: 55px; /* Ajuste final do padding */
+    }
+
+    .container {
+        padding: 20px 20px; /* Reduz mais o padding do container */
+    }
+
+    #school-logo {
+        max-width: 90px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em; /* FONTES BEM MENORES AQUI */
+        margin-bottom: 15px;
+    }
+
+    #welcome-area p, #welcome-area label {
+        font-size: 0.9em;
+    }
+
+    #player-name {
+        font-size: 0.85em;
+        padding: 8px 12px;
+        max-width: 180px;
+    }
+
+    .team-list {
+        width: 98%; /* Quase largura total */
+        margin: 5px 0;
+        padding: 10px; /* Menos padding */
+    }
+    .team-list h3 {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+    .team-list ul {
+        min-height: 30px;
+    }
+    .team-list li {
+        font-size: 0.7em; /* BEM MENOR */
+        padding: 5px 8px;
+        margin-bottom: 3px;
+    }
+
+    #team-scaled-message {
+        font-size: 0.95em;
+        margin-top: 20px;
+    }
+
+    #timer-display {
+        font-size: 1.2em; /* Ajuste */
+        margin-bottom: 15px;
+    }
+
+    #question {
+        font-size: 1.1em; /* Ajuste */
+        margin-bottom: 20px;
+    }
+
+    #answer-input {
+        font-size: 0.9em;
+        padding: 8px 12px;
+        max-width: 140px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.85em;
+        margin: 4px;
+    }
+    button#next-player-button, button#challenge-done-button {
+        padding: 7px 14px; /* Botões menores para caber */
+    }
+
+    #feedback-overlay {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+    #overlay-message {
+        font-size: 1.3em;
+    }
+    #overlay-details {
+        font-size: 0.85em;
+    }
+
+    #physical-challenge {
+        font-size: 1.1em;
+        padding: 10px;
+    }
+    #physical-challenge h2 {
+        font-size: 1.3em;
+    }
+    #physical-challenge p {
+        font-size: 0.9em;
+    }
+
+    .scores {
+        font-size: 1em;
+        margin-top: 15px;
+    }
+
+    #main-footer {
+        font-size: 0.6em; /* Rodapé minúsculo para não atrapalhar */
         padding: 6px 0;
     }
 }
-
-@media (max-width: 480px) { /* Ajustes para telas de celulares muito pequenas */
-    .container {
-        padding: 15px 20px;
-    }
-
-    h1 {
-        font-size: 1.6em;
-    }
-
-    #welcome-area p, #welcome-area label {
-        font-size: 0.9em;
-    }
-
-    #player-name {
-        font-size: 0.85em;
-        padding: 6px 10px;
-    }
-
-    .team-list h3 {
-        font-size: 1em;
-    }
-
-    .team-list li {
-        font-size: 0.75em;
-        padding: 5px 8px;
-    }
-
-    #team-scaled-message {
-        font-size: 0.9em;
-    }
-
-    #timer-display {
-        font-size: 1.2em;
-    }
-
-    #question {
-        font-size: 1.1em;
-    }
-
-    #answer-input {
-        font-size: 0.9em;
-        padding: 6px 10px;
-    }
-
-    button {
-        padding: 6px 12px;
-        font-size: 0.85em;
-    }
-
-    #feedback-overlay {
-        font-size: 1.3em;
-    }
-    #overlay-message {
-        font-size: 1.3em;
-    }
-    #overlay-details {
-        font-size: 0.9em;
-    }
-
-    #physical-challenge {
-        font-size: 1.3em;
-    }
-    #physical-challenge h2 {
-        font-size: 1.3em;
-    }
-    #physical-challenge p {
-        font-size: 1em;
-    }
-
-    .scores {
-        font-size: 1em;
-    }
-
-    #main-footer {
-        font-size: 0.65em;
-        padding: 5px 0;
-    }
-}
-
 
 /* CLASSE HIDDEN APLICADA COM !IMPORTANT */
 .hidden {
